@@ -3,15 +3,13 @@
 \title{A-optimal balanced bipartite block designs}
 \description{This function generates A-optimal balanced bipartite block (BBPB) designs for tests vs controls comparisons 
 with specified parameters}
-\usage{aoptbbpb(v1,v2,b,k,ntrial,pbar)}
+\usage{aoptbbpb(v1,v2,b,k,ntrial)}
 \arguments{	
 	\item{v1}{number of test treatments}
 	\item{v2}{number of controls}
 	\item{b}{number of blocks}
 	\item{k}{block size}	
-	\item{ntrial}{number of trials, default is 5}
-	\item{pbar}{logical value indicating whether progress bar will be displayed. Default
- is FALSE.}
+	\item{ntrial}{number of trials, default is 5}	
 	}
 \value{It either returns a message that "Design not found" or "BBPB Design does not exist for these parameters" or a design. If a design is found, it returns a list with following components
 	\item{parameters}{parameters of the design}	

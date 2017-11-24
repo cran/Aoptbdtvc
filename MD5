@@ -1,14 +1,14 @@
-a475326813764be5d4d02d57532d4fad *DESCRIPTION
-fa1e6b19649cfa093f0e4e4cefe938a9 *NAMESPACE
-d91ea77c0d29719edda4e63fdcdcb84e *R/Aoptbdtvc.R
+56619fb3eeb7170693d10b9285c9a7c7 *DESCRIPTION
+508890f5bcdc29f4956d518d990a7264 *NAMESPACE
+d967587d22079fae504da1d8ae49cacb *R/Aoptbdtvc.R
 48fbd4e7fed0905fdc4f4a61193bc97b *man/alternate.sol.Rd
 014bc9877c04e30bc283a5018ed0c10b *man/alternate.sol2.Rd
 88ac89b4c924a510e07c3bf0922f053d *man/alternate.sol3.Rd
-5f2b9cdf708b698207f0d76cc935d080 *man/aoptbbpb.Rd
-36fbda31a5fcef400d997a1385d13f1b *man/aoptgdtd.Rd
-eb6097b5b57ac19e8d8b06117b94e990 *man/bbpbwq.Rd
+6a28494b04798cf9cfd6af05c05cc37c *man/aoptbbpb.Rd
+16d49e4764e3bb551aa172780460d2cc *man/aoptgdtd.Rd
+2d6a49cf217aab08226af83d83676388 *man/bbpbwq.Rd
 e774eecc23dc73da2aa1eb41bf0d675d *man/block.design.Rd
-86ec97eb38590c7a686315d78c0c0104 *man/btibts.Rd
+ced4f5fde6d07e876c0458262d008b2c *man/btibts.Rd
 1e451ad7c676325589b0b4314d8295c3 *man/check.group.Rd
 b5e8e7452411030ca8ebf8f20e836e77 *man/g.Rd
 2d335b0a0f4b1d66428f1d770d0d544b *man/gbbpb.Rd
@@ -18,4 +18,4 @@ e82dc1449ab2362a9cf20e4f0ddee10d *man/getrow.Rd
 484cd5e365c11907a7e1f82f4f4f6fc1 *man/getrow3.Rd
 23197ef1425b23a82c572e021b36096b *man/getts.Rd
 aa2e3ff6ee26317038e83f64bc8be594 *man/getwq.Rd
-d699004729e62d7872b96235ceb39cb8 *man/wtaoptbtib.Rd
+295ebfe64e96cffbf15a7f11d0e5d3f2 *man/wtaoptbtib.Rd

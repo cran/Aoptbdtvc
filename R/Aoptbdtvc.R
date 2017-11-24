@@ -129,7 +129,7 @@ alternate.sol=function(v,b,k,r,r0,lambda,lambda0,N1,T,relaxed)
   }
   return(result)
 }
-btibts=function(v,b,k,t,s,alpha,rho=0,ntrial,pbar)
+btibts=function(v,b,k,t,s,alpha,rho=0,ntrial)
 {
   r0=s+b*t
   r=(b*k-r0)/v
@@ -144,10 +144,6 @@ btibts=function(v,b,k,t,s,alpha,rho=0,ntrial,pbar)
       while(trial<ntrial & success==0)
       {
         trial=trial+1
-        if (pbar==TRUE) 
-        {
-          if (Sys.info()[[1]]=="Windows") pb = winProgressBar(title = "progress bar", min = 0, max = v, width = 400) else pb=txtProgressBar(min = 0, max = v, style=3)
-        }
         N1=matrix(0,1,b)
         cols=sample(b,b-s)
         N1[1,cols]=t
@@ -176,12 +172,7 @@ btibts=function(v,b,k,t,s,alpha,rho=0,ntrial,pbar)
                 } else breaker=1
                 if (nrow(T)>5*v) breaker=1
               } else breaker=1
-            } 					
-            Sys.sleep(0.1)
-            if (pbar==TRUE) 
-            {
-              if (Sys.info()[[1]]=="Windows") setWinProgressBar(pb, i,title=paste(round((i-1)*100/v, 0),"% done,","row=",i, ",trial=",trial)) else  setTxtProgressBar(pb, i)
-            }
+            }	
             i=nrow(N1)+1	
         }
         if (nrow(N1)==(v+1)) 
@@ -220,7 +211,6 @@ btibts=function(v,b,k,t,s,alpha,rho=0,ntrial,pbar)
                     result="Design not found"	
                     parameter=c(v,b,k,t,s, alpha, rho)
                 }
-        	if (pbar==TRUE) close(pb)
       }
   } else {
             result="BTIB design does not exist for these parameters"
@@ -229,7 +219,7 @@ btibts=function(v,b,k,t,s,alpha,rho=0,ntrial,pbar)
   return(result)  
 }
 
-wtaoptbtib=function(v,b,k,alpha,rho=0,ntrial=5,pbar=FALSE)
+wtaoptbtib=function(v,b,k,alpha,rho=0,ntrial=5)
 {
 	if(k%%2!=0)
 	{
@@ -249,16 +239,15 @@ wtaoptbtib=function(v,b,k,alpha,rho=0,ntrial=5,pbar=FALSE)
 			{
 				t=ts[i,1]
 				s=ts[i,2]
-				output[[i]]=btibts(v,b,k,t,s,alpha,rho,ntrial,pbar)		
+				output[[i]]=btibts(v,b,k,t,s,alpha,rho,ntrial)		
 			}  
 		} else {
 					t=ts[1,1]
 					s=ts[1,2]
-					output=btibts(v,b,k,t,s,alpha,rho,ntrial,pbar)	
+					output=btibts(v,b,k,t,s,alpha,rho,ntrial)	
 				}
 	} else {
-				#output="Conditions of Lemma 5 are not satisfied"		
-	      output="Certain conditions are not satisfied"			
+				  output="Certain conditions are not satisfied"			
 			}
 	return(output)
 }
@@ -309,7 +298,7 @@ getr0=function(v,b,k)
   return(out)
 }
 
-aoptgdtd=function(m,n,b,k,ntrial=5,pbar=FALSE)
+aoptgdtd=function(m,n,b,k,ntrial=5)
 {
   v=m*n
   out=getr0(v,b,k)
@@ -326,11 +315,7 @@ aoptgdtd=function(m,n,b,k,ntrial=5,pbar=FALSE)
       success=0				
       while(trial<ntrial & success==0)
       {
-        trial=trial+1   
-        if (pbar==TRUE) 
-        {
-          if (Sys.info()[[1]]=="Windows") pb = winProgressBar(title = "progress bar", min = 0, max = v, width = 400) else pb=txtProgressBar(min = 0, max = v, style=3)
-        }
+        trial=trial+1
         N1=matrix(0,1,b)        
         if (r0>b) 
         {
@@ -366,11 +351,6 @@ aoptgdtd=function(m,n,b,k,ntrial=5,pbar=FALSE)
               } else breaker=1
               if (nrow(T)>5*v) breaker=1
             } 					
-            Sys.sleep(0.1)
-            if (pbar==TRUE) 
-            {
-              if (Sys.info()[[1]]=="Windows") setWinProgressBar(pb, i,title=paste(round((i-1)*100/v, 0),"% done,","row=",i, ",trial=",trial)) else  setTxtProgressBar(pb, i)
-            }
             i=nrow(N1)+1	
         }
         if (nrow(N1)==(v+1)) 
@@ -393,8 +373,7 @@ aoptgdtd=function(m,n,b,k,ntrial=5,pbar=FALSE)
               names(parameters)=c("m","n","b","k","r","r0","lambda1","lambda0")
               result=list(parameters=parameters,design=design,N=N1,NNP=NNP,Aeff=Aeff)              
             }            
-        } 
-        if (pbar==TRUE) close(pb)
+        }
       }
       if (success==0) 
       {
@@ -539,7 +518,7 @@ getwq=function(v1,v2,b,k)
   return(wq)
 }
 
-bbpbwq=function(v1,v2,b,k,w,q,ntrial,pbar)
+bbpbwq=function(v1,v2,b,k,w,q,ntrial)
 {
   r0=q+b*w
   r=(b*k-v2*r0)/v1
@@ -553,10 +532,6 @@ bbpbwq=function(v1,v2,b,k,w,q,ntrial,pbar)
     while(trial<ntrial & success==0)
     {
       trial=trial+1
-      if (pbar==TRUE) 
-      {
-        if (Sys.info()[[1]]=="Windows") pb = winProgressBar(title = "progress bar", min = 0, max = v1+v2, width = 400) else pb=txtProgressBar(min = 0, max = v1+v2, style=3)
-      }
       N1=matrix(0,v2,b)
       if (b>q) 
       {
@@ -587,10 +562,6 @@ bbpbwq=function(v1,v2,b,k,w,q,ntrial,pbar)
           if (nrow(T)>5*(v1+v2)) breaker=1
         } 					
         Sys.sleep(0.1)
-        if (pbar==TRUE) 
-        {
-          if (Sys.info()[[1]]=="Windows") setWinProgressBar(pb, i,title=paste(round((i-1)*100/(v1+v2), 0),"% done,","row=",i, ",trial=",trial)) else  setTxtProgressBar(pb, i)
-        }
         i=nrow(N1)+1	
       }
       if (nrow(N1)==(v1+v2)) 
@@ -620,7 +591,6 @@ bbpbwq=function(v1,v2,b,k,w,q,ntrial,pbar)
         result="Design not found"	
         parameter=c(v1,v2,b,k,w,q)                    		 
       }
-      if (pbar==TRUE) close(pb)
     }
   } else {
     result="BBPB design does not exist for these parameters"
@@ -711,7 +681,7 @@ alternate.sol3=function(v1,v2,b,k,r,r0,lambda1,lambda2,lambda12,N1,T,relaxed)
   return(result)
 }
 
-aoptbbpb=function(v1,v2,b,k,ntrial=5,pbar=FALSE)
+aoptbbpb=function(v1,v2,b,k,ntrial=5)
 {
   
   wq=getwq(v1,v2,b,k)
@@ -720,7 +690,7 @@ aoptbbpb=function(v1,v2,b,k,ntrial=5,pbar=FALSE)
   {
     w=wq[i,1]
     q=wq[i,2]
-    result=bbpbwq(v1,v2,b,k,w,q,ntrial,pbar)
+    result=bbpbwq(v1,v2,b,k,w,q,ntrial)
     return(result)
   }  
 }

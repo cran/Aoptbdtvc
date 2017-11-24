@@ -2,15 +2,14 @@
 \alias{wtaoptbtib}
 \title{Weighted A-optimal balanced treatment incomplete block designs}
 \description{This function generates weighted A-optimal balanced treatment incomplete block design for test vs control comparisons with specified parameters}
-\usage{wtaoptbtib(v,b,k,alpha,rho=0,ntrial=5,pbar=FALSE)}
+\usage{wtaoptbtib(v,b,k,alpha,rho=0,ntrial=5)}
 \arguments{	
 	\item{v}{number of test treatments}
 	\item{b}{number of blocks}
 	\item{k}{block size}		
 	\item{alpha}{Weight for test versus test comparisons. Should be between 0 to 1}
 	\item{rho}{rho=0}
-	\item{ntrial}{number of trials, default is 5}
-	\item{pbar}{Logical value indicating whether progress bar will be displayed. Default is FALSE.}
+	\item{ntrial}{number of trials, default is 5}	
 	}
 \value{It either returns a message that "Design not found" or "BTIB design does not exist for these parameters" or "Certain conditions are not satisfied" or a design. If a design is found, it returns a list with following components
 	\item{parameters}{parameters of the design}	

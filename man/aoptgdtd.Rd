@@ -3,16 +3,14 @@
 \title{A-optimal group divisible treatment designs}
 \description{This function generates A-optimal group divisible treatment (GDT) designs for test vs control comparisons 
 with specified parameters}
-\usage{aoptgdtd(m,n,b,k,ntrial,pbar)}
+\usage{aoptgdtd(m,n,b,k,ntrial)}
 \arguments{	
 	\item{m}{number of rows such that m*n = number of test treatments}
 	\item{n}{number of columns such that m*n = number of test treatments}
 	\item{b}{number of blocks}
 	\item{k}{block size}	
 	\item{ntrial}{number of trials, default is 5}
-	\item{pbar}{Logical value indicating whether progress bar will be displayed. Default
- is FALSE.}
-	}
+}
 \value{It either returns a message that "Design not found" or "A-optimal Design does not exist for these parameters" or a design. If a design is found, it returns a list with following components
 	\item{parameters}{parameters of the design}	
 	\item{design}{generated A-optmal GDT design}

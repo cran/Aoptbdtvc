@@ -1,7 +1,7 @@
 Package: Aoptbdtvc
 Title: A-Optimal Block Designs for Comparing Test Treatments with
         Controls
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: c(person("Baidya Nath", "Mandal", email = "mandal.stat@gmail.com", role = c("aut", "cre")),person("Sukanta", "Dash", role = "aut"),person("Rajender", "Parsad", role = "aut"))
 Author: Baidya Nath Mandal [aut, cre], Sukanta Dash [aut], Rajender Parsad [aut]
 Maintainer: Baidya Nath Mandal <mandal.stat@gmail.com>
@@ -10,6 +10,6 @@ Depends: R (>= 3.4.0), lpSolve, MASS
 License: GPL (>= 2)
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2017-11-22 05:02:03 UTC; LG
+Packaged: 2017-11-24 05:27:46 UTC; LG
 Repository: CRAN
-Date/Publication: 2017-11-22 10:02:03 UTC
+Date/Publication: 2017-11-24 13:56:17 UTC
