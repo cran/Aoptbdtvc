@@ -11,7 +11,7 @@
 	\item{rho}{rho=0}
 	\item{ntrial}{number of trials, default is 5}	
 	}
-\value{It either returns a message that "Design not found" or "BTIB design does not exist for these parameters" or "Certain conditions are not satisfied" or a design. If a design is found, it returns a list with following components
+\value{It either returns a text message or a design. If a design is found, it returns a list with following components
 	\item{parameters}{parameters of the design}	
 	\item{design}{generated weighted A-optmal BTIB design}
 	\item{N}{incidence matrix of the generated weighted A-optmal BTIB design}
@@ -32,7 +32,7 @@ wtaoptbtib(3,4,3,0.2,0)
 }
 \author{Baidya Nath Mandal <mandal.stat@gmail.com>}
 \references{
-Gupta, V., Ramana, D. and Parsad, R. (1999). Weighted A-efficiency of block designs for making treatment-control and treatment-treatment comparisons, Journal of statistical planning and inference 77(2), 301–319.
+Gupta, V., Ramana, D. and Parsad, R. (1999). Weighted A-efficiency of block designs for making treatment-control and treatment-treatment comparisons, Journal of statistical planning and inference 77(2), 301-319.
 
 Mandal, B. N., Parsad, R. and Dash, S. (2017). A-optimal block designs for comparing test treatments with control treatment(s) - an algorithmic approach, upcoming project report, ICAR-Indian Agricultural Statistics Research Institute, New Delhi, India.
 }

@@ -1,8 +1,7 @@
 \name{aoptgdtd}
 \alias{aoptgdtd}
 \title{A-optimal group divisible treatment designs}
-\description{This function generates A-optimal group divisible treatment (GDT) designs for test vs control comparisons 
-with specified parameters}
+\description{This function generates A-optimal group divisible treatment (GDT) designs for test vs control comparisons with specified parameters}
 \usage{aoptgdtd(m,n,b,k,ntrial)}
 \arguments{	
 	\item{m}{number of rows such that m*n = number of test treatments}
@@ -11,7 +10,7 @@ with specified parameters}
 	\item{k}{block size}	
 	\item{ntrial}{number of trials, default is 5}
 }
-\value{It either returns a message that "Design not found" or "A-optimal Design does not exist for these parameters" or a design. If a design is found, it returns a list with following components
+\value{It either returns a text message or a design. If a design is found, it returns a list with following components
 	\item{parameters}{parameters of the design}	
 	\item{design}{generated A-optmal GDT design}
 	\item{N}{incidence matrix of the generated A-optmal GDT design}
@@ -31,7 +30,7 @@ aoptgdtd(4,2,8,2)
 }
 \author{Baidya Nath Mandal <mandal.stat@gmail.com>}
 \references{
-Jacroux, M. (1989). The A-optimality of block designs for comparing test treatments with a control, Journal of the American Statistical Association 84(405), 310–317.
+Jacroux, M. (1989). The A-optimality of block designs for comparing test treatments with a control, Journal of the American Statistical Association 84(405), 310-317.
 
 Mandal, B. N., Parsad, R. and Dash, S. (2017). A-optimal block designs for comparing test treatments with control treatment(s) - an algorithmic approach, upcoming project report, ICAR-Indian Agricultural Statistics Research Institute, New Delhi, India.
 }

@@ -5,8 +5,7 @@
 \usage{check.group(m,n,x,y)}
 \arguments{
 	\item{m}{number of rows}
-	\item{n}{number of columns}
-	\item{k}{block size}
+	\item{n}{number of columns}	
 	\item{x}{x}
 	\item{y}{y}	
 	}

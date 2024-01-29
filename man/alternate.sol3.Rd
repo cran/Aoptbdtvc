@@ -11,7 +11,8 @@
 	\item{r}{number of replications of the test treatments}
 	\item{r0}{number of replications of the control}
 	\item{lambda1}{number of concurrences of two test treatments}
-	\item{lambda0}{number of concurrences of a test treatment with the control}
+	\item{lambda2}{number of concurrences between two control treatments}
+	\item{lambda12}{number of concurrences between a test and a control treatment}
 	\item{N1}{Incidence matrix obtained till the previous row}
 	\item{T}{Tabu list of deleted rows}
 	\item{relaxed}{are the constraints being relaxed?}

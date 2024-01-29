@@ -1,8 +1,7 @@
 \name{aoptbbpb}
 \alias{aoptbbpb}
 \title{A-optimal balanced bipartite block designs}
-\description{This function generates A-optimal balanced bipartite block (BBPB) designs for tests vs controls comparisons 
-with specified parameters}
+\description{This function generates A-optimal balanced bipartite block (BBPB) designs for tests vs controls comparisons with specified parameters}
 \usage{aoptbbpb(v1,v2,b,k,ntrial)}
 \arguments{	
 	\item{v1}{number of test treatments}
@@ -11,7 +10,7 @@ with specified parameters}
 	\item{k}{block size}	
 	\item{ntrial}{number of trials, default is 5}	
 	}
-\value{It either returns a message that "Design not found" or "BBPB Design does not exist for these parameters" or a design. If a design is found, it returns a list with following components
+\value{It either returns a text message or a design. If a design is found, it returns a list with following components
 	\item{parameters}{parameters of the design}	
 	\item{design}{generated A-optmal BBPB design}
 	\item{N}{incidence matrix of the generated A-optmal BBPB design}
@@ -34,7 +33,7 @@ aoptbbpb(6,3,9,4)
 \dontrun{aoptbbpb(3,3,12,4)}
 }
 \references{
-Jaggi, S., Gupta, V. and Parsad, R. (1996). A-efficient block designs for comparing two disjoint sets of treatments, Communications in Statistics-Theory and Methods 25(5), 967–983.
+Jaggi, S., Gupta, V. and Parsad, R. (1996). A-efficient block designs for comparing two disjoint sets of treatments, Communications in Statistics-Theory and Methods 25(5), 967-983.
 
 Mandal, B. N., Parsad, R. and Dash, S. (2017). A-optimal block designs for comparing test treatments with control treatment(s) - an algorithmic approach, upcoming project report, ICAR-Indian Agricultural Statistics Research Institute, New Delhi, India.
 }
